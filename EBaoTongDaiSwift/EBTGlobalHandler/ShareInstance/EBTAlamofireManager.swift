@@ -6,8 +6,12 @@
 //  Copyright © 2016年 com.csst. All rights reserved.
 //
 
+
+
 import UIKit
 import Alamofire
+typealias SuccessCompleteHandler = (responseObject: AnyObject!)->Void
+typealias FailureCompleteHandler = (error:AnyObject!)->Void
 class EBTAlamofireManager: NSObject {
 
     var alamofireManager:Manager
@@ -38,30 +42,52 @@ class EBTAlamofireManager: NSObject {
     {
         
     let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        config.timeoutIntervalForRequest = 5
+        config.timeoutIntervalForRequest = 2
         alamofireManager = Manager.init(configuration: config)
         
         
         
     }
     
-    func test()
-    {
-    let paramerUrl = KEBTHttpServerBaseURL + kEBTAccessTokenBaseURL + EBTGlobalHandler.currentDeviceVendor()
-        alamofireManager.request(.GET, paramerUrl, parameters: nil, encoding: ParameterEncoding.URL).responseJSON{
-        response in
-        
-            let  dict = response.result.value as! NSDictionary
-             print(dict["data"]!)
-            
-            
-        }
-
-        
        
-    }
+    func requestGetHttpMethod(httpURL paramerURL: String,paramter param:AnyObject!, success:SuccessCompleteHandler,failure: FailureCompleteHandler)
+    {
     
-
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+       // Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = ["accessToken":""];
+     let url = KEBTHttpServerBaseURL + paramerURL
+        
+        alamofireManager.request(.GET, url, parameters: param as? [String : AnyObject], encoding: ParameterEncoding.URL, headers: [:]).responseJSON{
+        response in
+            
+          print(response.result.error)
+        switch response.result
+        {
+        case .Success:
+            
+            success(responseObject: response.result.value)
+            
+            break
+          
+            
+            
+        case .Failure:
+            failure(error: response.result.error)
+            
+            break
+        }
+        
+             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+    }
     
     
     

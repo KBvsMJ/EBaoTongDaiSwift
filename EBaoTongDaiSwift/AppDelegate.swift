@@ -12,28 +12,70 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var group:dispatch_group_t!
+    
+    
+    
+    
+    
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
        
+        group = dispatch_group_create();
+        
+       dispatch_group_enter(group);
+      
+      
+            
+            self.getAccessToken()
+      
+         dispatch_group_enter(group);
+      
+            self.createCustomTabBar()
+       
+        
+        
+        
+        
+        
+        
+      dispatch_group_notify(group,dispatch_get_main_queue()) { () -> Void in
+        
+        print("3")
+        
+        }
+       
+        
+        
+        
+        
+        return true
+    }
+
+    func createCustomTabBar()
+    {
+    
+        print("2")
         self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
-     
+        
         /**  首页
-        */
+         */
         
         let firstPageStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let firstPageCtl = firstPageStoryBoard.instantiateViewControllerWithIdentifier("EBTFirstPageViewController")
+        
         firstPageCtl.title = "首页"
         let firstPageNav = UINavigationController(rootViewController: firstPageCtl)
         
         /**  投资
          */
         
-         let investStoryBoard = UIStoryboard.init(name: "EBTMyInvest", bundle: nil)
+        let investStoryBoard = UIStoryboard.init(name: "EBTMyInvest", bundle: nil)
         
-          let myInvestCtl = investStoryBoard.instantiateViewControllerWithIdentifier("EBTMyInvestViewController")
+        let myInvestCtl = investStoryBoard.instantiateViewControllerWithIdentifier("EBTMyInvestViewController")
         myInvestCtl.title = "投资"
-          let  myInvestNav = UINavigationController(rootViewController: myInvestCtl)
+        let  myInvestNav = UINavigationController(rootViewController: myInvestCtl)
         
         /**  活动
          */
@@ -48,21 +90,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let weathStoryBoard = UIStoryboard.init(name: "EBTWeath", bundle: nil)
         let weathCtl = weathStoryBoard.instantiateViewControllerWithIdentifier("EBTWeathViewController")
         weathCtl.title = "财富"
-       let weathNav = UINavigationController(rootViewController:weathCtl)
+        let weathNav = UINavigationController(rootViewController:weathCtl)
         
-      
+        
         let navArray = [firstPageNav,myInvestNav,activityNav,weathNav]
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = navArray
         tabBarController.selectedIndex = 0
-
+        
         let selectImageArray = ["tab_button_0_tap","tab_button_1_tap","tab_button_2_tap","tab_button_3_tap"]
         let normalImageArray = ["tab_button_0","tab_button_1","tab_button_2","tab_button_3"]
         let titleArray = ["首页","投资","活动","财富"]
         
         for var i = 0; i < titleArray.count; i++
         {
-           let tabBarItem = navArray[i].tabBarItem
+            let tabBarItem = navArray[i].tabBarItem
             
             var normalImage = UIImage(named: normalImageArray[i])
             normalImage = normalImage?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
@@ -74,7 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tabBarItem.selectedImage = selectImage
             tabBarItem.image = normalImage
             tabBarItem .setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.redColor(),NSFontAttributeName:UIFont.boldSystemFontOfSize(12)], forState: UIControlState.Selected)
-
+            
         }
         
         
@@ -84,18 +126,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let navBar = UINavigationBar.appearance()
         navBar.setBackgroundImage(topImage, forBarMetrics: UIBarMetrics.Default)
-         self.window!.rootViewController = tabBarController
-         self.window!.makeKeyAndVisible()
+        self.window!.rootViewController = tabBarController
+        self.window!.makeKeyAndVisible()
+        dispatch_group_leave(self.group)
+        
+        
+    }
+  func getAccessToken()
+      {
+   
+       let paramerUrl =  kEBTAccessTokenBaseURL + EBTGlobalHandler.currentDeviceVendor()
 
+      EBTAlamofireManager.shareInstance.requestGetHttpMethod(httpURL: paramerUrl, paramter: nil, success: { (responseObject) -> Void in
+          print("1")
+          print(responseObject)
+        
+        dispatch_group_leave(self.group!)
+        
+        }) { (error) -> Void in
+            
+            print(error)
+        }
+        
+      
+      
         
         
         
-        
-        return true
     }
 
-    
-  
+    }
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -120,5 +180,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
-}
+
 

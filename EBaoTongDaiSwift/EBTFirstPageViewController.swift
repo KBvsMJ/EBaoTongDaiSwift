@@ -14,7 +14,7 @@ class EBTFirstPageViewController: EBTBaseViewController {
     {
         super.viewDidLoad()
         
-//        let paramerUrl = KEBTHttpServerBaseURL + kEBTAccessTokenBaseURL + EBTGlobalHandler.currentDeviceVendor()
+//       
 //      
        
 //        Alamofire.request(.GET, paramerUrl, parameters: [:])
@@ -25,7 +25,7 @@ class EBTFirstPageViewController: EBTBaseViewController {
 //                }
 //        }
         
-     EBTAlamofireManager.shareInstance.test()
+     //EBTAlamofireManager.shareInstance.test()
         
         
 //        Alamofire.request(.GET, paramerUrl, parameters: [:]).responseData{
