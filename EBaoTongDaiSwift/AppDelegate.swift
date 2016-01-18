@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let firstPageStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let firstPageCtl = firstPageStoryBoard.instantiateViewControllerWithIdentifier("EBTFirstPageViewController")
+        firstPageCtl.title = "首页"
         let firstPageNav = UINavigationController(rootViewController: firstPageCtl)
         
         /**  投资
@@ -31,12 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          let investStoryBoard = UIStoryboard.init(name: "EBTMyInvest", bundle: nil)
         
           let myInvestCtl = investStoryBoard.instantiateViewControllerWithIdentifier("EBTMyInvestViewController")
+        myInvestCtl.title = "投资"
           let  myInvestNav = UINavigationController(rootViewController: myInvestCtl)
         
         /**  活动
          */
         let activityStoryBoard = UIStoryboard.init(name: "EBTActivity", bundle: nil)
         let activityCtl = activityStoryBoard.instantiateViewControllerWithIdentifier("EBTActivityViewController")
+        activityCtl.title = "活动"
         let activityNav = UINavigationController(rootViewController:activityCtl)
         
         
@@ -44,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          */
         let weathStoryBoard = UIStoryboard.init(name: "EBTWeath", bundle: nil)
         let weathCtl = weathStoryBoard.instantiateViewControllerWithIdentifier("EBTWeathViewController")
+        weathCtl.title = "财富"
        let weathNav = UINavigationController(rootViewController:weathCtl)
         
       

@@ -49,8 +49,12 @@ class EBTAlamofireManager: NSObject {
     {
     let paramerUrl = KEBTHttpServerBaseURL + kEBTAccessTokenBaseURL + EBTGlobalHandler.currentDeviceVendor()
         alamofireManager.request(.GET, paramerUrl, parameters: nil, encoding: ParameterEncoding.URL).responseJSON{
-        response in print(response.result.error?.code)
+        response in
         
+            let  dict = response.result.value as! NSDictionary
+             print(dict["data"]!)
+            
+            
         }
 
         
