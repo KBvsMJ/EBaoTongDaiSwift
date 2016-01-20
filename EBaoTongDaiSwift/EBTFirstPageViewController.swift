@@ -10,36 +10,10 @@ import UIKit
 import Alamofire
 class EBTFirstPageViewController: EBTBaseViewController {
 
+    @IBOutlet weak var TFContent: UITextField!
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-//       
-//      
-       
-//        Alamofire.request(.GET, paramerUrl, parameters: [:])
-//            .responseJSON { response in
-//                
-//                if let JSON = response.result.value {
-//                    print("JSON: \(JSON)")
-//                }
-//        }
-        
-     //EBTAlamofireManager.shareInstance.test()
-        
-        
-//        Alamofire.request(.GET, paramerUrl, parameters: [:]).responseData{
-//        
-//          response in print(response.result.value!)
-//        }
-    
-
-//        Alamofire.request(.GET, paramerUrl).responseString{
-//           response in
-//            print("Success: \(response.result.isSuccess)")
-//            print("Response String: \(response.result.value!)")
-//        }
-        
         
         
         
@@ -48,13 +22,21 @@ class EBTFirstPageViewController: EBTBaseViewController {
         
         
     }
-
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         
     }
 
+    
+    @IBAction func btnClick(sender: UIButton)
+    {
+        
+        
+        
+        
+    }
+    
 
 }
 
