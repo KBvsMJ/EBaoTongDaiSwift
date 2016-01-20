@@ -17,20 +17,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RiE-sC-vQD">
-                                <rect key="frame" x="28" y="276" width="306" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAL-g4-aOH">
-                                <rect key="frame" x="147" y="326" width="30" height="30"/>
+                                <rect key="frame" x="172" y="329" width="30" height="30"/>
                                 <animations/>
                                 <state key="normal" title="跳转"/>
                                 <connections>
                                     <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PyW-An-bh8"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RiE-sC-vQD">
+                                <rect key="frame" x="113" y="277" width="148" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -48,7 +48,7 @@
         <!--Second View Controller-->
         <scene sceneID="nIj-B6-9Fr">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" id="Wv1-OL-Sfk" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="Wv1-OL-Sfk" customClass="SecondViewController" customModule="EBaoTongDaiSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZF6-St-QnV"/>
                         <viewControllerLayoutGuide type="bottom" id="olq-tE-lkc"/>
@@ -61,9 +61,12 @@
                                 <rect key="frame" x="168" y="243" width="30" height="30"/>
                                 <animations/>
                                 <state key="normal" title="跳转"/>
+                                <connections>
+                                    <action selector="btnClick:" destination="Wv1-OL-Sfk" eventType="touchUpInside" id="xK0-zF-LI5"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iFb-Fh-2LA">
-                                <rect key="frame" x="49" y="193" width="306" height="30"/>
+                                <rect key="frame" x="90" y="197" width="187" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -74,6 +77,9 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="TFContent" destination="iFb-Fh-2LA" id="f8h-jG-KEW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bi6-fm-mCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

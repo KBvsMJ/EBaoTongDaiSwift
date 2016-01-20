@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D9A19511C4FBB5C005A508A /* EBTFirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9A19501C4FBB5C005A508A /* EBTFirstPageViewController.swift */; };
-		2D9A19531C4FBD72005A508A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9A19521C4FBD72005A508A /* SecondViewController.swift */; };
+		2D9A195A1C4FBEF5005A508A /* EBTFirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9A19591C4FBEF5005A508A /* EBTFirstPageViewController.swift */; };
+		2D9A195C1C4FBF0E005A508A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9A195B1C4FBF0E005A508A /* SecondViewController.swift */; };
+		2D9A195E1C4FC93B005A508A /* MyInvestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9A195D1C4FC93B005A508A /* MyInvestCell.swift */; };
 		7D6DC9AC1C449E97003DAC08 /* ImageWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DC9A91C449E97003DAC08 /* ImageWithColor.swift */; };
 		7D6DC9AD1C449E97003DAC08 /* UIImage+ImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DC9AB1C449E97003DAC08 /* UIImage+ImageWithColor.m */; };
 		7D6DC9B01C44A009003DAC08 /* EBTGlobalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DC9AF1C44A009003DAC08 /* EBTGlobalHandler.swift */; };
@@ -54,8 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2D9A19501C4FBB5C005A508A /* EBTFirstPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EBTFirstPageViewController.swift; path = EBaoTongDaiSwift/EBTFirstPageViewController.swift; sourceTree = SOURCE_ROOT; };
-		2D9A19521C4FBD72005A508A /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = ../../../../../Desktop/swift/SwiftViewControllerDemo/SwiftViewControllerDemo/SecondViewController.swift; sourceTree = "<group>"; };
+		2D9A19591C4FBEF5005A508A /* EBTFirstPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBTFirstPageViewController.swift; sourceTree = "<group>"; };
+		2D9A195B1C4FBF0E005A508A /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		2D9A195D1C4FC93B005A508A /* MyInvestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInvestCell.swift; sourceTree = "<group>"; };
 		4B65E4A45180B5B0794B14D8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7BA2659E86EB6A4207A03263 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D6DC9A81C449E97003DAC08 /* EBaoTongDaiSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EBaoTongDaiSwift-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -119,6 +121,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D9A19561C4FBED2005A508A /* FirstPage */ = {
+			isa = PBXGroup;
+			children = (
+				2D9A19591C4FBEF5005A508A /* EBTFirstPageViewController.swift */,
+				2D9A195B1C4FBF0E005A508A /* SecondViewController.swift */,
+			);
+			path = FirstPage;
+			sourceTree = "<group>";
+		};
 		7D6DC9A61C449DE4003DAC08 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,11 +184,11 @@
 		7DBBA99C1C3B5FBA00EB54A8 /* EBaoTongDaiSwift */ = {
 			isa = PBXGroup;
 			children = (
+				2D9A19561C4FBED2005A508A /* FirstPage */,
 				7DBBA9E91C3BA85500EB54A8 /* EBTGlobalHandler */,
 				7DBBA9D01C3B623800EB54A8 /* Weath */,
 				7DBBA9CF1C3B622D00EB54A8 /* Activity */,
 				7DBBA9CE1C3B621D00EB54A8 /* MyInvest */,
-				7DBBA9CD1C3B612200EB54A8 /* FirstPage */,
 				7DBBA9CC1C3B611100EB54A8 /* StoryBoardName */,
 				7DBBA9CB1C3B60FB00EB54A8 /* Main */,
 				7DBBA9A41C3B5FBA00EB54A8 /* Assets.xcassets */,
@@ -230,19 +241,11 @@
 			path = StoryBoardName;
 			sourceTree = "<group>";
 		};
-		7DBBA9CD1C3B612200EB54A8 /* FirstPage */ = {
-			isa = PBXGroup;
-			children = (
-				2D9A19501C4FBB5C005A508A /* EBTFirstPageViewController.swift */,
-				2D9A19521C4FBD72005A508A /* SecondViewController.swift */,
-			);
-			path = FirstPage;
-			sourceTree = "<group>";
-		};
 		7DBBA9CE1C3B621D00EB54A8 /* MyInvest */ = {
 			isa = PBXGroup;
 			children = (
 				7DBBA9D51C3B655900EB54A8 /* EBTMyInvestViewController.swift */,
+				2D9A195D1C4FC93B005A508A /* MyInvestCell.swift */,
 			);
 			path = MyInvest;
 			sourceTree = "<group>";
@@ -475,19 +478,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D9A19511C4FBB5C005A508A /* EBTFirstPageViewController.swift in Sources */,
 				7DBBA9E61C3B93AE00EB54A8 /* EBTActivityNavigationController.swift in Sources */,
+				2D9A195E1C4FC93B005A508A /* MyInvestCell.swift in Sources */,
 				7DBBAA021C3BC08F00EB54A8 /* EBTBaseViewController.swift in Sources */,
 				7DEBBCAA1C463F0A00E0D0A5 /* EBTSwiftDefine.swift in Sources */,
 				7DBBA9E81C3B946800EB54A8 /* EBTWeathNavigationController.swift in Sources */,
 				7DBBA9D41C3B654700EB54A8 /* EBTActivityViewController.swift in Sources */,
+				2D9A195A1C4FBEF5005A508A /* EBTFirstPageViewController.swift in Sources */,
 				7DBBA99E1C3B5FBA00EB54A8 /* AppDelegate.swift in Sources */,
 				7DBBA9D21C3B653200EB54A8 /* EBTWeathViewController.swift in Sources */,
 				7DBBA9DE1C3B6D5A00EB54A8 /* EBTBaseNavigationController.swift in Sources */,
 				7DBBA9E41C3B939500EB54A8 /* EBTMyInvestNavigationController.swift in Sources */,
 				7DBBA9E21C3B92F200EB54A8 /* EBTFirstPageNavigationController.swift in Sources */,
 				7D6DC9AC1C449E97003DAC08 /* ImageWithColor.swift in Sources */,
-				2D9A19531C4FBD72005A508A /* SecondViewController.swift in Sources */,
+				2D9A195C1C4FBF0E005A508A /* SecondViewController.swift in Sources */,
 				7D6DC9AD1C449E97003DAC08 /* UIImage+ImageWithColor.m in Sources */,
 				7DBBA9E01C3B91C600EB54A8 /* EBTTabBarController.swift in Sources */,
 				7DBBA9D61C3B655900EB54A8 /* EBTMyInvestViewController.swift in Sources */,
